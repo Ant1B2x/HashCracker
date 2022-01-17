@@ -4,10 +4,10 @@
       <div class="text-center hero-content">
         <div class="max-w-full">
           <h1 class="mb-5 text-5xl font-bold">
-            Hash Cracker
+            {{ title }}
           </h1>
           <p class="mb-5">
-            Enter your hashed password and see if your password has been compromised
+            {{ description }}
           </p>
           <div class="form-control">
             <input [(ngModel)]="hashInput" type="text" placeholder="MD5, SHA1, SHA256..." class="mb-5 input input-lg input-bordered" required>

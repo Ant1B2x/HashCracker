@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CrackerComponent } from './cracker/cracker.component';
 import { FooterComponent } from './footer/footer.component';
 import { PasswordComponent } from './password/password.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PasswordComponent } from './password/password.component';
     HeaderComponent,
     CrackerComponent,
     FooterComponent,
-    PasswordComponent
+    PasswordComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

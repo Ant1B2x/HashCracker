@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { HttpService } from '../http.service';
 import { ResultTypeService } from '../resulttype.service';
 
@@ -9,6 +11,8 @@ import { ResultTypeService } from '../resulttype.service';
 })
 export class PasswordComponent implements OnInit {
 
+  title: string = '';
+  description: string = '';
   passwordInput: string = '';
   displayResult: boolean = false;
   resultMessage: string = '';
@@ -20,7 +24,10 @@ export class PasswordComponent implements OnInit {
     { type: 'SHA256', value: '' }
   ];
 
-  constructor(private httpService: HttpService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private httpService: HttpService) {
+    this.title = route.snapshot.data['title'];
+    this.description = route.snapshot.data['description'];
+  }
 
   ngOnInit(): void {
   }

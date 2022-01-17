@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route } from '@angular/router';
+
+import { routes } from '../app-routing.module';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  routes: Route[] = [];
+
+  constructor() {
+    this.routes = routes.filter(v => v.component)
+  }
 
   ngOnInit(): void {
   }
