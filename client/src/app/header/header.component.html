@@ -5,10 +5,8 @@
     </div>
     <div class="flex-none hidden px-2 mx-2 md:flex">
       <div class="flex items-stretch">
-        <a routerLink="/hash" routerLinkActive="active" class="btn btn-ghost btn-sm rounded-btn">
-          Hash Cracker</a>
-        <a routerLink="/password" routerLinkActive="active" class="btn btn-ghost btn-sm rounded-btn">
-          Add Password</a>
+        <a *ngFor="let route of routes" routerLink="/{{ route.path }}" routerLinkActive="active" class="btn btn-ghost btn-sm rounded-btn">
+          {{ route.data!['title'] }}</a>
       </div>
     </div>
     <div class="flex-none md:hidden">
@@ -19,13 +17,9 @@
           </svg>
         </button>
         <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-          <li>
-            <a routerLink="/hash" routerLinkActive="active">
-              Hash Cracker</a>
-          </li>
-          <li>
-            <a routerLink="/password" routerLinkActive="active">
-              Add Password</a>
+          <li *ngFor="let route of routes">
+            <a routerLink="/{{ route.path }}" routerLinkActive="active">
+              {{ route.data!['title'] }}</a>
           </li>
         </ul>
       </div>
